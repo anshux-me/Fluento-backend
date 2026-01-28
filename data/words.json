@@ -1,0 +1,452 @@
+[
+    {
+        "word": "cat",
+        "pos": "n",
+        "difficulty": "Easy",
+        "definitions": [
+            "a small domesticated carnivorous mammal"
+        ],
+        "examples": [
+            "The cat sat on the mat"
+        ],
+        "synonyms": [
+            "feline",
+            "kitty"
+        ]
+    },
+    {
+        "word": "dog",
+        "pos": "n",
+        "difficulty": "Easy",
+        "definitions": [
+            "a domesticated carnivorous mammal"
+        ],
+        "examples": [
+            "The dog barked loudly"
+        ],
+        "synonyms": [
+            "canine",
+            "hound"
+        ]
+    },
+    {
+        "word": "happy",
+        "pos": "a",
+        "difficulty": "Easy",
+        "definitions": [
+            "feeling or showing pleasure"
+        ],
+        "examples": [
+            "She was happy to see him"
+        ],
+        "synonyms": [
+            "joyful",
+            "cheerful"
+        ]
+    },
+    {
+        "word": "run",
+        "pos": "v",
+        "difficulty": "Easy",
+        "definitions": [
+            "move at a speed faster than a walk"
+        ],
+        "examples": [
+            "He ran to catch the bus"
+        ],
+        "synonyms": [
+            "sprint",
+            "dash"
+        ]
+    },
+    {
+        "word": "house",
+        "pos": "n",
+        "difficulty": "Easy",
+        "definitions": [
+            "a building for human habitation"
+        ],
+        "examples": [
+            "They moved into a new house"
+        ],
+        "synonyms": [
+            "home",
+            "dwelling"
+        ]
+    },
+    {
+        "word": "book",
+        "pos": "n",
+        "difficulty": "Easy",
+        "definitions": [
+            "a written or printed work"
+        ],
+        "examples": [
+            "I read a good book"
+        ],
+        "synonyms": [
+            "volume",
+            "tome"
+        ]
+    },
+    {
+        "word": "water",
+        "pos": "n",
+        "difficulty": "Easy",
+        "definitions": [
+            "a colorless transparent liquid"
+        ],
+        "examples": [
+            "Drink more water"
+        ],
+        "synonyms": [
+            "aqua",
+            "H2O"
+        ]
+    },
+    {
+        "word": "food",
+        "pos": "n",
+        "difficulty": "Easy",
+        "definitions": [
+            "any nutritious substance eaten"
+        ],
+        "examples": [
+            "Food is essential for life"
+        ],
+        "synonyms": [
+            "nourishment",
+            "sustenance"
+        ]
+    },
+    {
+        "word": "good",
+        "pos": "a",
+        "difficulty": "Easy",
+        "definitions": [
+            "of high quality or standard"
+        ],
+        "examples": [
+            "That was a good meal"
+        ],
+        "synonyms": [
+            "excellent",
+            "fine"
+        ]
+    },
+    {
+        "word": "time",
+        "pos": "n",
+        "difficulty": "Easy",
+        "definitions": [
+            "indefinite continued progress"
+        ],
+        "examples": [
+            "Time flies when you're having fun"
+        ],
+        "synonyms": [
+            "period",
+            "duration"
+        ]
+    },
+    {
+        "word": "beautiful",
+        "pos": "a",
+        "difficulty": "Medium",
+        "definitions": [
+            "pleasing the senses aesthetically"
+        ],
+        "examples": [
+            "A beautiful sunset"
+        ],
+        "synonyms": [
+            "gorgeous",
+            "stunning"
+        ]
+    },
+    {
+        "word": "important",
+        "pos": "a",
+        "difficulty": "Medium",
+        "definitions": [
+            "of great significance or value"
+        ],
+        "examples": [
+            "An important meeting"
+        ],
+        "synonyms": [
+            "significant",
+            "crucial"
+        ]
+    },
+    {
+        "word": "different",
+        "pos": "a",
+        "difficulty": "Medium",
+        "definitions": [
+            "not the same as another"
+        ],
+        "examples": [
+            "They have different opinions"
+        ],
+        "synonyms": [
+            "distinct",
+            "varied"
+        ]
+    },
+    {
+        "word": "understand",
+        "pos": "v",
+        "difficulty": "Medium",
+        "definitions": [
+            "perceive the intended meaning"
+        ],
+        "examples": [
+            "I understand the problem now"
+        ],
+        "synonyms": [
+            "comprehend",
+            "grasp"
+        ]
+    },
+    {
+        "word": "experience",
+        "pos": "n",
+        "difficulty": "Medium",
+        "definitions": [
+            "practical contact with events"
+        ],
+        "examples": [
+            "A learning experience"
+        ],
+        "synonyms": [
+            "knowledge",
+            "practice"
+        ]
+    },
+    {
+        "word": "remember",
+        "pos": "v",
+        "difficulty": "Medium",
+        "definitions": [
+            "have in or be able to bring to mind"
+        ],
+        "examples": [
+            "I remember that day clearly"
+        ],
+        "synonyms": [
+            "recall",
+            "recollect"
+        ]
+    },
+    {
+        "word": "knowledge",
+        "pos": "n",
+        "difficulty": "Medium",
+        "definitions": [
+            "facts, information, and skills"
+        ],
+        "examples": [
+            "Knowledge is power"
+        ],
+        "synonyms": [
+            "understanding",
+            "wisdom"
+        ]
+    },
+    {
+        "word": "possible",
+        "pos": "a",
+        "difficulty": "Medium",
+        "definitions": [
+            "able to be done"
+        ],
+        "examples": [
+            "Is it possible to change?"
+        ],
+        "synonyms": [
+            "feasible",
+            "achievable"
+        ]
+    },
+    {
+        "word": "necessary",
+        "pos": "a",
+        "difficulty": "Medium",
+        "definitions": [
+            "required to be done"
+        ],
+        "examples": [
+            "A necessary step"
+        ],
+        "synonyms": [
+            "essential",
+            "required"
+        ]
+    },
+    {
+        "word": "available",
+        "pos": "a",
+        "difficulty": "Medium",
+        "definitions": [
+            "able to be used or obtained"
+        ],
+        "examples": [
+            "Is this seat available?"
+        ],
+        "synonyms": [
+            "accessible",
+            "obtainable"
+        ]
+    },
+    {
+        "word": "eloquent",
+        "pos": "a",
+        "difficulty": "Hard",
+        "definitions": [
+            "fluent or persuasive in speaking"
+        ],
+        "examples": [
+            "An eloquent speaker"
+        ],
+        "synonyms": [
+            "articulate",
+            "expressive"
+        ]
+    },
+    {
+        "word": "ephemeral",
+        "pos": "a",
+        "difficulty": "Hard",
+        "definitions": [
+            "lasting for a very short time"
+        ],
+        "examples": [
+            "Ephemeral pleasures"
+        ],
+        "synonyms": [
+            "transient",
+            "fleeting"
+        ]
+    },
+    {
+        "word": "ubiquitous",
+        "pos": "a",
+        "difficulty": "Hard",
+        "definitions": [
+            "present everywhere"
+        ],
+        "examples": [
+            "Smartphones are now ubiquitous"
+        ],
+        "synonyms": [
+            "omnipresent",
+            "pervasive"
+        ]
+    },
+    {
+        "word": "ameliorate",
+        "pos": "v",
+        "difficulty": "Hard",
+        "definitions": [
+            "make something bad better"
+        ],
+        "examples": [
+            "Steps to ameliorate the situation"
+        ],
+        "synonyms": [
+            "improve",
+            "enhance"
+        ]
+    },
+    {
+        "word": "surreptitious",
+        "pos": "a",
+        "difficulty": "Hard",
+        "definitions": [
+            "kept secret, especially because improper"
+        ],
+        "examples": [
+            "A surreptitious glance"
+        ],
+        "synonyms": [
+            "covert",
+            "clandestine"
+        ]
+    },
+    {
+        "word": "magnanimous",
+        "pos": "a",
+        "difficulty": "Hard",
+        "definitions": [
+            "generous or forgiving"
+        ],
+        "examples": [
+            "A magnanimous gesture"
+        ],
+        "synonyms": [
+            "generous",
+            "charitable"
+        ]
+    },
+    {
+        "word": "perfunctory",
+        "pos": "a",
+        "difficulty": "Hard",
+        "definitions": [
+            "carried out with minimal effort"
+        ],
+        "examples": [
+            "A perfunctory nod"
+        ],
+        "synonyms": [
+            "cursory",
+            "superficial"
+        ]
+    },
+    {
+        "word": "sagacious",
+        "pos": "a",
+        "difficulty": "Hard",
+        "definitions": [
+            "having keen mental discernment"
+        ],
+        "examples": [
+            "A sagacious advisor"
+        ],
+        "synonyms": [
+            "wise",
+            "shrewd"
+        ]
+    },
+    {
+        "word": "capricious",
+        "pos": "a",
+        "difficulty": "Hard",
+        "definitions": [
+            "given to sudden changes of mood"
+        ],
+        "examples": [
+            "Capricious weather"
+        ],
+        "synonyms": [
+            "fickle",
+            "unpredictable"
+        ]
+    },
+    {
+        "word": "meticulous",
+        "pos": "a",
+        "difficulty": "Hard",
+        "definitions": [
+            "showing great attention to detail"
+        ],
+        "examples": [
+            "Meticulous planning"
+        ],
+        "synonyms": [
+            "thorough",
+            "precise"
+        ]
+    }
+]

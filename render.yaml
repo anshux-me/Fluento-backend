@@ -1,0 +1,40 @@
+# Render.com deployment configuration
+# https://render.com/docs/yaml-spec
+
+services:
+  - type: web
+    name: fluento-backend
+    runtime: docker
+    plan: standard  # Requires at least 2GB RAM for ML models
+    
+    # Docker settings
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    
+    # Environment variables
+    envVars:
+      - key: DEBUG
+        value: "false"
+      - key: WHISPER_MODEL
+        value: "tiny"  # Use 'tiny' for faster loading, 'base' for better accuracy
+      - key: DATA_DIR
+        value: "/app/data"
+      # CORS - Add your Vercel frontend URL here
+      - key: CORS_ORIGINS
+        value: "https://your-app.vercel.app"
+      # Firebase credentials as JSON string (paste entire firebase-credentials.json content)
+      - key: FIREBASE_CREDENTIALS_JSON
+        sync: false  # Set manually in dashboard for security
+    
+    # Persistent disk for models and audio cache
+    disk:
+      name: fluento-data
+      mountPath: /app/data
+      sizeGB: 10
+    
+    # Health check
+    healthCheckPath: /health
+    
+    # Auto-deploy on push
+    autoDeploy: true
+
