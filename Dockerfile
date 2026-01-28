@@ -1,7 +1,7 @@
 # LinguaAI Backend Dockerfile
-# Multi-stage build for optimized image size
+# Using bullseye for FFmpeg 4.x compatibility with PyAV
 
-FROM python:3.11-slim as base
+FROM python:3.11-slim-bullseye as base
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \

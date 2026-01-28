@@ -13,7 +13,7 @@ pydantic-settings==2.1.0
 firebase-admin==6.4.0
 
 # AI/ML - Speech to Text (Faster Whisper - optimized for CPU)
-faster-whisper==1.0.1
+faster-whisper>=1.0.0
 
 # AI/ML - Text to Speech (gTTS - Google Text-to-Speech)
 gTTS>=2.5.0
