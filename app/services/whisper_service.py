@@ -1,43 +1,46 @@
 """
 Whisper service for speech-to-text transcription.
-Uses OpenAI's open-source Whisper model.
+Uses Faster Whisper for optimized CPU inference.
 """
 
-import whisper
+from faster_whisper import WhisperModel
 import tempfile
 import os
 from pathlib import Path
 from typing import Optional
-import numpy as np
 
 from app.config import settings
 
 
 class WhisperService:
-    """Service for speech-to-text using Whisper."""
+    """Service for speech-to-text using Faster Whisper."""
     
     def __init__(self):
         self.model = None
         self._loaded = False
     
     def load_model(self):
-        """Load the Whisper model into memory."""
+        """Load the Faster Whisper model into memory."""
         if self._loaded:
             return
         
-        print(f"Loading Whisper model: {settings.WHISPER_MODEL}")
+        model_size = settings.WHISPER_MODEL
+        print(f"Loading Faster Whisper model: {model_size}")
         
         # Download to models directory
         download_root = str(settings.MODELS_DIR / "whisper")
         os.makedirs(download_root, exist_ok=True)
         
-        self.model = whisper.load_model(
-            settings.WHISPER_MODEL,
+        # Use CPU with int8 quantization for efficiency
+        self.model = WhisperModel(
+            model_size,
+            device="cpu",
+            compute_type="int8",
             download_root=download_root
         )
         
         self._loaded = True
-        print("Whisper model loaded successfully")
+        print("Faster Whisper model loaded successfully")
     
     def transcribe(self, audio_path: str) -> str:
         """
@@ -52,15 +55,16 @@ class WhisperService:
         if not self._loaded:
             self.load_model()
         
-        # Transcribe with Whisper
-        result = self.model.transcribe(
+        # Transcribe with Faster Whisper
+        segments, info = self.model.transcribe(
             audio_path,
             language="en",
-            task="transcribe",
-            fp16=False,  # Use FP32 for CPU compatibility
+            beam_size=5,
+            vad_filter=True,  # Filter out silence
         )
         
-        text = result.get("text", "").strip()
+        # Combine all segments
+        text = " ".join([segment.text for segment in segments]).strip()
         return text
     
     def transcribe_bytes(self, audio_bytes: bytes, suffix: str = ".webm") -> str:

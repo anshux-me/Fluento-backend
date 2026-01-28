@@ -16,7 +16,7 @@ services:
       - key: DEBUG
         value: "false"
       - key: WHISPER_MODEL
-        value: "tiny"  # Use 'tiny' for faster loading, 'base' for better accuracy
+        value: "tiny.en"  # Use .en for English-only (faster and smaller)
       - key: DATA_DIR
         value: "/app/data"
       # CORS - Add your Vercel frontend URL here
