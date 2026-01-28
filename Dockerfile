@@ -16,9 +16,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libsndfile1 \
     # For phonemizer (espeak)
     espeak-ng \
-    # Build tools
+    # Build tools (required for faster-whisper/PyAV)
     build-essential \
     git \
+    pkg-config \
+    # FFmpeg dev libraries (required for PyAV)
+    libavformat-dev \
+    libavcodec-dev \
+    libavdevice-dev \
+    libavutil-dev \
+    libavfilter-dev \
+    libswscale-dev \
+    libswresample-dev \
     # Cleanup
     && rm -rf /var/lib/apt/lists/*
 
