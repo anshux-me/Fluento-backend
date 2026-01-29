@@ -4,6 +4,7 @@ Word service for loading and filtering the WordNet-derived dataset.
 
 import json
 import random
+from datetime import date
 from pathlib import Path
 from typing import Optional, List
 from app.config import settings
@@ -20,6 +21,8 @@ class WordService:
             "hard": [],
         }
         self._loaded = False
+        # Daily word cache: { "date": date_obj, "words": [...] }
+        self._daily_cache: dict = {"date": None, "words": []}
     
     def load_words(self, words_file: Path = None):
         """Load words from JSON file and index by difficulty."""
@@ -111,6 +114,64 @@ class WordService:
         if difficulty:
             return len(self.words_by_difficulty.get(difficulty.lower(), []))
         return len(self.words)
+    
+    def get_daily_words(self) -> List[dict]:
+        """
+        Get the 5 words of the day (2 easy, 2 medium, 1 hard).
+        Same words are returned for the entire day.
+        """
+        if not self._loaded:
+            self.load_words()
+        
+        today = date.today()
+        
+        # Return cached words if still valid for today
+        if self._daily_cache["date"] == today and self._daily_cache["words"]:
+            return self._daily_cache["words"]
+        
+        # Use date as seed for consistent daily selection
+        seed = today.toordinal()
+        rng = random.Random(seed)
+        
+        daily_words = []
+        
+        # Select 2 easy words
+        easy_words = self.words_by_difficulty.get("easy", [])
+        if len(easy_words) >= 2:
+            selected_easy = rng.sample(easy_words, 2)
+        else:
+            selected_easy = easy_words[:2] if easy_words else []
+        daily_words.extend(selected_easy)
+        
+        # Select 2 medium words
+        medium_words = self.words_by_difficulty.get("medium", [])
+        if len(medium_words) >= 2:
+            selected_medium = rng.sample(medium_words, 2)
+        else:
+            selected_medium = medium_words[:2] if medium_words else []
+        daily_words.extend(selected_medium)
+        
+        # Select 1 hard word
+        hard_words = self.words_by_difficulty.get("hard", [])
+        if hard_words:
+            selected_hard = [rng.choice(hard_words)]
+        else:
+            selected_hard = []
+        daily_words.extend(selected_hard)
+        
+        # Format response with word and meaning
+        formatted_words = []
+        for word_data in daily_words:
+            formatted_words.append({
+                "word": word_data.get("word", ""),
+                "meaning": word_data.get("definitions", [""])[0] if word_data.get("definitions") else "",
+                "difficulty": word_data.get("difficulty", "Medium"),
+            })
+        
+        # Cache the result
+        self._daily_cache = {"date": today, "words": formatted_words}
+        
+        return formatted_words
 
 
 # Singleton instance

@@ -9,6 +9,28 @@ from app.services.word_service import word_service
 router = APIRouter(prefix="/word", tags=["Words"])
 
 
+@router.get("/daily")
+async def get_daily_words():
+    """
+    Get the 5 words of the day.
+    Returns 2 easy, 2 medium, 1 hard word with meanings.
+    Same words are returned for the entire day.
+    """
+    words = word_service.get_daily_words()
+    return {"words": words}
+
+
+@router.get("/stats")
+async def word_stats():
+    """Get word count statistics by difficulty."""
+    return {
+        "total_words": word_service.get_word_count(),
+        "easy": word_service.get_word_count("easy"),
+        "medium": word_service.get_word_count("medium"),
+        "hard": word_service.get_word_count("hard")
+    }
+
+
 @router.get("/{mode}/{difficulty}", response_model=WordResponse)
 async def get_word(
     mode: str,
